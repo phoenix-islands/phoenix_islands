@@ -7,6 +7,8 @@ defmodule PhoenixIslands.MixProject do
       version: "0.0.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
+      description: description(),
+      package: package(),
       deps: deps()
     ]
   end
@@ -15,6 +17,23 @@ defmodule PhoenixIslands.MixProject do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  defp description() do
+    "Library for creating islands of various frontend framework in Phoenix LiveView"
+  end
+
+  defp package() do
+    [
+      # This option is only needed when you don't want to use the OTP application name
+      name: "phoenix_islands",
+      # These are the default files included in the package
+      # files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
+      #           license* CHANGELOG* changelog* src),
+      files: ~w(lib .formatter.exs mix.exs README*),
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/phoenix-islands/phoenix_islands"}
     ]
   end
 
