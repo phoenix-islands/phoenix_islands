@@ -1,7 +1,7 @@
 defmodule PhoenixIslands.MixProject do
   use Mix.Project
 
-  @version "0.0.2"
+  @version "0.0.3"
 
   def project do
     [
@@ -25,7 +25,7 @@ defmodule PhoenixIslands.MixProject do
 
   defp docs do
     [
-      main: "README",
+      main: "readme",
       source_ref: "v#{@version}",
       source_url: "https://github.com/phoenix-islands/phoenix_islands",
       extra_section: "GUIDES",

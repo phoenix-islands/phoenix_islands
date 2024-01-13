@@ -10,7 +10,7 @@ by adding `phoenix_islands` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:phoenix_islands, "~> 0.0.2"}
+    {:phoenix_islands, "~> 0.0.3"}
   ]
 end
 ```
