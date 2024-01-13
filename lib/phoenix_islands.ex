@@ -5,15 +5,28 @@ defmodule PhoenixIslands do
 
   use Phoenix.Component
 
+  @island_types [
+    :data,
+    :lit,
+    :react,
+    :solid,
+    :svelte,
+    :vue
+  ]
+
   attr :id, :string
-  attr :component, :string
-  attr :data, :any
+  attr :type, :atom, default: :data, values: @island_types
+  attr :component, :string, examples: ["Clock"]
+  attr :data, :map, examples: [%{"foo" => "bar"}]
+
   slot :inner_block
 
   def island(assigns) do
     ~H"""
-    <div class="phx-island" id={@id} phx-hook="ReactIsland" x-component={@component}>
-      <div id={@id <> "-content"} class="phx-island_content" phx-update="ignore" />
+    <div class="phx-island" id={@id} phx-hook={phx_hook(@type)} x-component={@component}>
+      <%= if @type != :data do %>
+        <div id={@id <> "-content"} class="phx-island_content" phx-update="ignore" />
+      <% end %>
       <div class="phx-island_data" style="display: none">
         <.data data={@data} path={@id <> "-data"} />
       </div>
@@ -25,6 +38,11 @@ defmodule PhoenixIslands do
     </div>
     """
   end
+
+  defp phx_hook(type) when type in @island_types,
+    do: (type |> Atom.to_string() |> String.capitalize()) <> "Island"
+
+  defp phx_hook(_), do: nil
 
   defp data(%{data: x} = assigns) when is_nil(x),
     do: ~H"""
