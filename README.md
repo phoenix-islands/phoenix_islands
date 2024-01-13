@@ -1,6 +1,14 @@
 # Phoenix Islands
 
-Library for creating islands of various frontend frameworks in Phoenix LiveView
+**Phoenix Islands** is a library for creating islands of various frontend frameworks in Phoenix LiveView.
+
+You can see a demo at [deployed example](https://phoenix-islands-example.fly.dev/) and look at [its code on Github](https://github.com/phoenix-islands/phoenix-islands-js/tree/main/example)
+
+## Features
+
+- **Live Islands**: We can enjoy huge front-end ecosystem without losing Liveliness. We start with React for now but we can go as far as all framework that [nanostore](https://github.com/nanostores/nanostores) supports in the near future.
+- **Stream support**: That means no more giant JSON eating up server memory.
+- **LiveView children passing (Experimental)**: LiveView inside React inside Live-View.
 
 ## Installation
 
@@ -10,7 +18,7 @@ by adding `phoenix_islands` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:phoenix_islands, "~> 0.0.3"}
+    {:phoenix_islands, "~> 0.0.4"}
   ]
 end
 ```
