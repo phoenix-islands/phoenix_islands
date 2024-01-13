@@ -6,24 +6,25 @@ You can see a demo at [deployed example](https://phoenix-islands-example.fly.dev
 
 ## Features
 
-- **Live Islands**: We can enjoy huge front-end ecosystem without losing Liveliness. We start with React for now but we can go as far as all framework that [nanostore](https://github.com/nanostores/nanostores) supports in the near future.
+- **Live Islands**: We can enjoy huge front-end ecosystem without losing _Liveliness_. Only React is supported for now, but we can go as far as all framework that [nanostore](https://github.com/nanostores/nanostores) supports in the near future.
 - **Stream support**: That means no more giant JSON eating up server memory.
 - **LiveView children passing (Experimental)**: LiveView inside React inside Live-View.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `phoenix_islands` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `phoenix_islands` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:phoenix_islands, "~> 0.0.4"}
+    {:phoenix_islands, "~> 0.0.5"}
   ]
 end
 ```
 
 ## Usage
+
+First you need to add `import PhoenixIslands` to your views:
 
 ```elixir
 defmodule ExampleWeb.IslandsLive do
@@ -47,7 +48,7 @@ defmodule ExampleWeb.IslandsLive do
 end
 ```
 
-Then you can pick an frontend framework and start the integration
+And then you can pick an frontend framework and start the integration
 
 ## React
 
