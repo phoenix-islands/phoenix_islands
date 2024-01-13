@@ -17,7 +17,7 @@ The package can be installed by adding `phoenix_islands` to your list of depende
 ```elixir
 def deps do
   [
-    {:phoenix_islands, "~> 0.0.5"}
+    {:phoenix_islands, "~> 0.0.6"}
   ]
 end
 ```
@@ -48,11 +48,11 @@ defmodule ExampleWeb.IslandsLive do
 end
 ```
 
-And then you can pick an frontend framework and start the integration
+And then you can pick an frontend framework of your liking, say...
 
 ## React
 
-Integrate react by following [this instruction](`e:phoenix_islands:react.md`) and start rendering:
+Then you can integrate React by following [this instruction](`e:phoenix_islands:react.md`) and start rendering:
 
 ```heex
 <div class="px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-28 xl:py-32">
