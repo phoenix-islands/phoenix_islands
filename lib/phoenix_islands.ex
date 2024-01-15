@@ -5,6 +5,15 @@ defmodule PhoenixIslands do
 
   use Phoenix.Component
 
+  # defp attribute(:component), do: "phx-island-component"
+  # defp attribute(:store_key), do: "phx-island-global-store-key"
+
+  defp class(:root), do: "phx-island_root"
+  defp class(:data), do: "phx-island_data"
+  defp class(:content), do: "phx-island_content"
+  defp class(:children), do: "phx-island_children"
+  # defp class(:mounted_children), do: "phx-island_children-mounted"
+
   @island_types [
     :data,
     :lit,
@@ -16,22 +25,29 @@ defmodule PhoenixIslands do
 
   attr :id, :string
   attr :type, :atom, default: :data, values: @island_types
-  attr :component, :string, examples: ["Clock"]
+  attr :component, :string, examples: ["Clock"], default: nil
   attr :data, :map, examples: [%{"foo" => "bar"}]
+  attr :global_store_key, :string, default: nil
 
   slot :inner_block
 
+  #  <%!-- @attribute_component={@component}
+  #  @attribute_global_store_key={@global_store_key} --%>
   def island(assigns) do
     ~H"""
-    <div class="phx-island" id={@id} phx-hook={phx_hook(@type)} x-component={@component}>
+    <div class={class(:root)} id={@id}
+      phx-hook={phx_hook(@type)}
+      phx-island-component={@component}
+      phx-island-global-store-key={@global_store_key}
+    >
       <%= if @type != :data do %>
-        <div id={@id <> "-content"} class="phx-island_content" phx-update="ignore" />
+        <div id={@id <> "-content"} class={class(:content)} phx-update="ignore" />
       <% end %>
-      <div class="phx-island_data" style="display: none">
+      <div class={class(:data)} style="display: none">
         <.data data={@data} path={@id <> "-data"} />
       </div>
       <%= if @inner_block do %>
-        <div class="phx-island_children" style="display: none">
+        <div class={class(:children)} style="display: none">
           <%= render_slot(@inner_block) %>
         </div>
       <% end %>

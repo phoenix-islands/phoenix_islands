@@ -3,7 +3,9 @@ defmodule PhoenixIslandsTest do
   doctest PhoenixIslands
 
   test "should render" do
-    assert PhoenixIslands.island(%{type: :react, id: "0"}) |> dbg != nil
-    assert PhoenixIslands.react_island(%{type: :react, id: "0"}) |> dbg != nil
+    assigns = %{type: :react, id: "0", data: %{"x" => 1}}
+    rendered = PhoenixIslands.island(assigns)
+    assert rendered != nil
+    assert rendered.dynamic.(assigns) != nil
   end
 end
