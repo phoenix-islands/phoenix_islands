@@ -26,7 +26,7 @@ defmodule PhoenixIslands do
   attr :id, :string
   attr :type, :atom, default: :data, values: @island_types
   attr :component, :string, examples: ["Clock"], default: nil
-  attr :data, :map, examples: [%{"foo" => "bar"}]
+  attr :data, :map, examples: [%{"foo" => "bar"}], default: nil
   attr :global_store_key, :string, default: nil
 
   slot :inner_block
