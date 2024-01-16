@@ -1,4 +1,4 @@
-defmodule PhoenixIslands.Data do
+defmodule PhoenixIslands.LiveData do
   use Phoenix.LiveComponent
 
   attr :data, :any
