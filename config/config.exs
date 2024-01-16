@@ -1,6 +1,6 @@
 import Config
 
-if Mix.env() do
+if Mix.env() == :dev do
   config :git_ops,
     mix_project: PhoenixIslands.MixProject,
     changelog_file: "CHANGELOG.md",

@@ -1,0 +1,9 @@
+{
+	"editor.formatOnSave": true,
+	"[plaintext]": {
+		"editor.formatOnSave": false
+	},
+	"files.associations": {
+		"CHANGELOG.md": "plaintext"
+	}
+}

@@ -2,10 +2,12 @@ defmodule PhoenixIslandsTest do
   use ExUnit.Case
   doctest PhoenixIslands
 
+  import Phoenix.LiveViewTest
+
   test "should render" do
-    assigns = %{type: :react, id: "0", data: %{"x" => 1}}
-    rendered = PhoenixIslands.island(assigns)
-    assert rendered != nil
-    assert rendered.dynamic.(assigns) != nil
+    assigns = %{type: :react, id: "0", data: %{x: 1}}
+
+    render_component(&PhoenixIslands.island/1, assigns) =~
+      "<div class=\"phx-island_children\" style=\"display: none\">"
   end
 end
