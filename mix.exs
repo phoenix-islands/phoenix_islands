@@ -121,8 +121,9 @@ defmodule PhoenixIslands.MixProject do
   defp deps do
     [
       {:ex_doc, ">= 0.19.0", only: :dev, runtime: false},
-      {:makeup_html, ">= 0.0.0", only: :dev, runtime: false},
+      {:git_ops, "~> 2.6.0", only: [:dev]},
       {:makeup_eex, ">= 0.0.0", only: :dev, runtime: false},
+      {:makeup_html, ">= 0.0.0", only: :dev, runtime: false},
       {:phoenix_live_view, ">= 0.20.1"}
     ]
   end
