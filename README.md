@@ -17,7 +17,7 @@ The package can be installed by adding `phoenix_islands` to your list of depende
 ```elixir
 def deps do
   [
-    {:phoenix_islands, "~> 0.2.0"}
+    {:phoenix_islands, "~> 0.2.1"}
   ]
 end
 ```

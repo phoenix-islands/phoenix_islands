@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.2.1](https://github.com/phoenix-islands/phoenix_islands/compare/v0.2.0...v0.2.1) (2024-01-16)
+
+
+
+
+### Bug Fixes:
+
+* should not use live_component by default
+
 ## [v0.2.0](https://github.com/phoenix-islands/phoenix_islands/compare/v0.1.3...v0.2.0) (2024-01-16)
 
 
