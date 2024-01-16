@@ -36,6 +36,7 @@ defmodule PhoenixIslands do
   def island(assigns) do
     ~H"""
     <div class={class(:root)} id={@id}
+      style={if(!@component || @type == :data, do: "display: none", else: "")}
       phx-hook={phx_hook(@type)}
       phx-island-component={@component}
       phx-island-global-store-key={@global_store_key}
